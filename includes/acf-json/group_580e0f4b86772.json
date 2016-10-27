@@ -1,0 +1,160 @@
+{
+    "key": "group_580e0f4b86772",
+    "title": "Avvikande perioder",
+    "fields": [
+        {
+            "key": "field_580f01034902f",
+            "label": "Avvikelse",
+            "name": "avvikelse",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "L\u00e4gg till period",
+            "sub_fields": [
+                {
+                    "key": "field_580f027949030",
+                    "label": "Veckodag",
+                    "name": "veckodag",
+                    "type": "checkbox",
+                    "instructions": "Om det bara \u00e4r vissa veckodagar under perioden s\u00e5 ange dessa h\u00e4r",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "1": "M\u00e5ndag",
+                        "2": "Tisdag",
+                        "3": "Onsdag",
+                        "4": "Torsdag",
+                        "5": "Fredag",
+                        "6": "L\u00f6rdag",
+                        "7": "S\u00f6ndag"
+                    },
+                    "default_value": [],
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_580f02c749031",
+                    "label": "Startdatum",
+                    "name": "startdatum",
+                    "type": "date_picker",
+                    "instructions": "Startdatum f\u00f6r perioden",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "Y-m-d",
+                    "return_format": "Y-m-d",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_580f02f849032",
+                    "label": "Slutdatum",
+                    "name": "slutdatum",
+                    "type": "date_picker",
+                    "instructions": "Slutdatum f\u00f6r perioden",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "Y-m-d",
+                    "return_format": "Y-m-d",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_580f035849033",
+                    "label": "Tider",
+                    "name": "tider",
+                    "type": "repeater",
+                    "instructions": "\u00d6ppnings och st\u00e4ngningstider",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": "",
+                    "max": "",
+                    "layout": "table",
+                    "button_label": "L\u00e4gg till rad",
+                    "sub_fields": [
+                        {
+                            "key": "field_580f0c0b49034",
+                            "label": "\u00d6ppningstid",
+                            "name": "oppningstid",
+                            "type": "time_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "H:i",
+                            "return_format": "H:i"
+                        },
+                        {
+                            "key": "field_580f0c2c49035",
+                            "label": "St\u00e4ngningstid",
+                            "name": "stangningstid",
+                            "type": "time_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "H:i",
+                            "return_format": "H:i"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event_location"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "menu_item_level": "all",
+    "modified": 1477571597
+}

@@ -1,0 +1,396 @@
+{
+    "key": "group_580e033c9c940",
+    "title": "\u00d6ppnings och st\u00e4ngningstider f\u00f6r anl\u00e4ggningar",
+    "fields": [
+        {
+            "key": "field_580ef8ee1a59f",
+            "label": "M\u00e5ndag",
+            "name": "standard_1",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "L\u00e4gg till tider",
+            "sub_fields": [
+                {
+                    "key": "field_580ef9131a5a0",
+                    "label": "\u00d6ppningstid",
+                    "name": "oppningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_580ef9421a5a1",
+                    "label": "St\u00e4ngningstid",
+                    "name": "stangningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                }
+            ]
+        },
+        {
+            "key": "field_580ef966cb1bd",
+            "label": "Tisdag",
+            "name": "standard_2",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "L\u00e4gg till rad",
+            "sub_fields": [
+                {
+                    "key": "field_580ef966cb1be",
+                    "label": "\u00d6ppningstid",
+                    "name": "oppningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_580ef966cb1bf",
+                    "label": "St\u00e4ngningstid",
+                    "name": "stangningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                }
+            ]
+        },
+        {
+            "key": "field_580ef9890965f",
+            "label": "Onsdag",
+            "name": "standard_3",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "L\u00e4gg till rad",
+            "sub_fields": [
+                {
+                    "key": "field_580ef98909660",
+                    "label": "\u00d6ppningstid",
+                    "name": "oppningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_580ef98909661",
+                    "label": "St\u00e4ngningstid",
+                    "name": "stangningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                }
+            ]
+        },
+        {
+            "key": "field_580ef99dcce32",
+            "label": "Torsdag",
+            "name": "standard_4",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "L\u00e4gg till rad",
+            "sub_fields": [
+                {
+                    "key": "field_580ef99dcce33",
+                    "label": "\u00d6ppningstid",
+                    "name": "oppningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_580ef99dcce34",
+                    "label": "St\u00e4ngningstid",
+                    "name": "stangningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                }
+            ]
+        },
+        {
+            "key": "field_580ef9b045f2b",
+            "label": "Fredag",
+            "name": "standard_5",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "L\u00e4gg till rad",
+            "sub_fields": [
+                {
+                    "key": "field_580ef9b045f2c",
+                    "label": "\u00d6ppningstid",
+                    "name": "oppningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_580ef9b045f2d",
+                    "label": "St\u00e4ngningstid",
+                    "name": "stangningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                }
+            ]
+        },
+        {
+            "key": "field_580ef9c6a2184",
+            "label": "L\u00f6rdag",
+            "name": "standard_6",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "L\u00e4gg till rad",
+            "sub_fields": [
+                {
+                    "key": "field_580ef9c6a2185",
+                    "label": "\u00d6ppningstid",
+                    "name": "oppningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_580ef9c6a2186",
+                    "label": "St\u00e4ngningstid",
+                    "name": "stangningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                }
+            ]
+        },
+        {
+            "key": "field_580ef9df3361b",
+            "label": "S\u00f6ndag",
+            "name": "standard_0",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "L\u00e4gg till rad",
+            "sub_fields": [
+                {
+                    "key": "field_580ef9df3361c",
+                    "label": "\u00d6ppningstid",
+                    "name": "oppningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_580ef9df3361d",
+                    "label": "St\u00e4ngningstid",
+                    "name": "stangningstid",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event_location"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "Ange de vanliga \u00f6ppettiderna som visas om inget annat anges",
+    "menu_item_level": "all",
+    "modified": 1477571574
+}

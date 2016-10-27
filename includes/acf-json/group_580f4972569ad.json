@@ -1,0 +1,116 @@
+{
+    "key": "group_580f4972569ad",
+    "title": "Avvikande datum",
+    "fields": [
+        {
+            "key": "field_580f4bcc3f47b",
+            "label": "Avvikande datum",
+            "name": "avvikande_datum",
+            "type": "repeater",
+            "instructions": "Ange datum och de nya \u00f6ppnings- och st\u00e4ngningstiderna",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "L\u00e4gg till datum",
+            "sub_fields": [
+                {
+                    "key": "field_580f4cfb6c9b9",
+                    "label": "Datum",
+                    "name": "datum",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "Y-m-d",
+                    "return_format": "Y-m-d",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_580f4da02bfa9",
+                    "label": "Tider",
+                    "name": "tider",
+                    "type": "repeater",
+                    "instructions": "Ange \u00f6ppnings- och st\u00e4ngningstider",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": "",
+                    "max": "",
+                    "layout": "table",
+                    "button_label": "L\u00e4gg till rad",
+                    "sub_fields": [
+                        {
+                            "key": "field_580f4dca2bfaa",
+                            "label": "\u00d6ppningstid",
+                            "name": "oppningstid",
+                            "type": "time_picker",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "H:i",
+                            "return_format": "H:i"
+                        },
+                        {
+                            "key": "field_580f4de92bfab",
+                            "label": "St\u00e4ngningstid",
+                            "name": "stangningstid",
+                            "type": "time_picker",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "H:i",
+                            "return_format": "H:i"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event_location"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "menu_item_level": "all",
+    "modified": 1477571616
+}

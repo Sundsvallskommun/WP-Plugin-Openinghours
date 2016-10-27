@@ -1,0 +1,115 @@
+.opening-hours-wrapper {
+    background: #286aa6;
+}
+
+.opening-hours-wrapper .list-group {
+    background: #286aa6;
+}
+
+.opening-hours-wrapper .list-group-item {
+    background: #286aa6;
+    border: none;
+    color: #fff;
+}
+
+.card.opening-hours-wrapper .opening-hours-widget .location-information. span.phone,
+.opening-hours-widget .list-group-item div .phone {
+    font-weight: normal !important;
+}
+
+.opening-hours-widget .list-group-item a,
+.opening-hours-widget .list-group-item a:visited {
+    color: #fff;
+}
+
+.opening-hours-wrapper .header {
+    display: block;
+    width: 90%;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.opening-hours-wrapper .opening-hours-header {
+    background-color: #3c7cb6;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.opening-hours-wrapper .opening-hours-header .arrow {
+    cursor: pointer;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.opening-hours-wrapper .header p {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+.opening-hours-wrapper .header .title {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.opening-hours-wrapper .header .date {
+    font-weight: bold;
+    cursor: pointer;
+    width: 200px;
+    margin: auto;
+}
+
+.opening-hours-wrapper .current-location,
+.opening-hours-wrapper .current-date {
+    display: none;
+}
+
+.datepicker-wrapper {
+    width: 200px;
+    margin: auto;
+}
+
+#opening-hours-datepicker {
+    display: none;
+}
+
+.datepicker {
+    width: 200px;
+    margin-left: 30px;
+}
+
+
+.opening-hours-wrapper .list-group-item .location-information {
+    width: 90%;
+    padding-left: 10px;
+}
+
+.opening-hours-wrapper .opening-hours-footer {
+    background: #286aa6;
+    border: none;
+    color: #fff;
+}
+
+.opening-hours-wrapper .opening-hours-footer a,
+.opening-hours-wrapper .opening-hours-footer a:visited {
+    color: #fff;
+}
+
+.opening-hours-wrapper .opening-hours-footer a:hover {
+    text-decoration: underline;
+}
+
+.loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/ajax-loader.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+}
+
+
