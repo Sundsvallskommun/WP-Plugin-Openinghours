@@ -208,7 +208,7 @@ class Wp_Plugin_Openinghours {
 
 		$plugin_public = new Wp_Plugin_Openinghours_Public( $this->get_plugin_name(), $this->get_version() );
 		$wp_plugin_openinghours_posttype_location = new WP_Plugin_OpeningHours_Posttype_Location();
-		//$wp_plugin_openinghours_widget = new WP_Plugin_OpeningHours_Widget();
+		$wp_plugin_openinghours_widget = new WP_Plugin_OpeningHours_Widget();
 		$wp_plugin_opening_hours_widget_ajax = new WP_Plugin_OpeningHours_Widget_Ajax();
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
