@@ -134,6 +134,30 @@
                             "return_format": "H:i"
                         }
                     ]
+                },
+                {
+                    "key": "field_5820370e914dc",
+                    "label": "Typ",
+                    "name": "typ",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "oppet": "\u00d6ppet",
+                        "stangt": "St\u00e4ngt"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "oppet",
+                    "layout": "vertical",
+                    "return_format": "value"
                 }
             ]
         }
@@ -156,5 +180,5 @@
     "active": 1,
     "description": "",
     "menu_item_level": "all",
-    "modified": 1477571597
+    "modified": 1478506389
 }
