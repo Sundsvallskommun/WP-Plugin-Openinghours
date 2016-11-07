@@ -156,32 +156,35 @@ class WP_Plugin_OpeningHours_Widget {
 
 		if ( count( $locations ) > 0 ) {
 
-			foreach( $locations as $location ) {
+			foreach ( $locations as $location ) {
 
 				$phone = get_field( 'telefon', $location->ID );
 				$email = get_field( 'e-post', $location->ID );
 
-				$field_name = 'standard_' . date_i18n('w', strtotime( $check_date ) );
+				$field_name = 'standard_' . date_i18n( 'w', strtotime( $check_date ) );
 				$standard_opening_hours = get_field( $field_name, $location->ID );
 
 				$opening_hours[$location->ID]['location_data'] = $location;
 				$opening_hours[$location->ID]['location_data']->contact_phone = $phone;
 				$opening_hours[$location->ID]['location_data']->contact_email = $email;
 
-				if ( is_array( $standard_opening_hours ) && count( $standard_opening_hours) > 0 ) {
+				if ( is_array( $standard_opening_hours ) && count( $standard_opening_hours ) > 0 ) {
 
 					$opening_hours[$location->ID]['hours'] = $standard_opening_hours;
 					$opening_hours[$location->ID]['type'] = 'standard';
 
 				}
 
-
 				$opening_hours = self::check_deviation_periods( $check_date, $location, $opening_hours );
 				$opening_hours = self::check_deviation_dates( $check_date, $location, $opening_hours );
 
-				if ( empty( $opening_hours[$location->ID]['type'] ) ) $opening_hours[$location->ID]['hours'] = 'STÄNGT';
+				if ( empty( $opening_hours[ $location->ID ]['type'] )|| $opening_hours[$location->ID]['closed'] == true ) {
+					$opening_hours[ $location->ID ]['hours'] = 'STÄNGT';
+				}
+
 
 			}
+
 
 		}
 
@@ -224,6 +227,14 @@ class WP_Plugin_OpeningHours_Widget {
 								$opening_hours[$location->ID]['hours'] = $deviation['tider'];
 								$opening_hours[$location->ID]['type'] = 'period';
 
+								//echo '<pre>' . print_r( $deviation, true ) . '</pre>';
+								//die();
+								if ( $deviation['typ'] === 'stangt' ) {
+									$opening_hours[$location->ID]['closed'] = true;
+								} else {
+									$opening_hours[$location->ID]['closed'] = false;
+								}
+
 							}
 
 						}
@@ -234,6 +245,12 @@ class WP_Plugin_OpeningHours_Widget {
 
 							$opening_hours[$location->ID]['hours'] = $deviation['tider'];
 							$opening_hours[$location->ID]['type'] = 'period';
+
+							if ( $deviation['typ'] === 'stangt' ) {
+								$opening_hours[$location->ID]['closed'] = true;
+							} else {
+								$opening_hours[$location->ID]['closed'] = false;
+							}
 
 						}
 
@@ -271,9 +288,16 @@ class WP_Plugin_OpeningHours_Widget {
 
 				if ( $check_date == $deviation['datum'] ) {
 
+					//echo '<pre>' . print_r( $deviation, true ) . '</pre>';
 					// Found a deviation
 					$opening_hours[$location->ID]['hours'] = $deviation['tider'];
 					$opening_hours[$location->ID]['type'] = 'single';
+
+					if ( $deviation['typ'] === 'stangt' ) {
+						$opening_hours[$location->ID]['closed'] = true;
+					} else {
+						$opening_hours[$location->ID]['closed'] = false;
+					}
 
 				}
 
