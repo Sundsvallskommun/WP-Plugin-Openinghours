@@ -38,6 +38,8 @@ class WP_Plugin_OpeningHours_Widget {
 			'location' => 'all'
 		), $atts );
 
+		$this->enqueue_scripts_and_styles();
+
 		ob_start();
 		?>
 		<div class="card opening-hours-wrapper">
@@ -61,6 +63,18 @@ class WP_Plugin_OpeningHours_Widget {
 		</div>
 		<?php
 		return ob_get_clean();
+	}
+
+
+	private function enqueue_scripts_and_styles() {
+
+		wp_enqueue_script( 'wp-plugin-openinghours' );
+		wp_enqueue_script( 'wp-plugin-openinghours-datepicker' );
+		wp_enqueue_script( 'wp-plugin-openinghours-datepicker-locale' );
+
+		wp_enqueue_style( 'wp-plugin-openinghours-datepicker' );
+		wp_enqueue_style( 'wp-plugin-openinghours' );
+
 	}
 
 
@@ -107,7 +121,7 @@ class WP_Plugin_OpeningHours_Widget {
 	 *
 	 * @return      string      html
 	 */
-	private function location_information( $location ) {
+	private static function location_information( $location ) {
 		ob_start();
 		?>
 		<div class="title"><a href="<?php echo get_permalink( $location['location_data']->ID ); ?>"><?php echo $location['location_data']->post_title; ?></a></div>
@@ -116,7 +130,9 @@ class WP_Plugin_OpeningHours_Widget {
 			$compiled_hours = array();
 
 			foreach ( $location['hours'] as $hour ) {
-				$compiled_hours []= array_shift( explode( ':', $hour['oppningstid'] ) ) . '-' . array_shift( explode( ':', $hour['stangningstid'] ) );
+				$openinghours = explode( ':', $hour['oppningstid'] );
+				$closinghours = explode( ':', $hour['stangningstid'] );
+				$compiled_hours []= array_shift( $openinghours ) . '-' . array_shift( $closinghours );
 			}
 
 			$phone = '';
@@ -149,7 +165,7 @@ class WP_Plugin_OpeningHours_Widget {
 	 *
 	 * @return  array       the array with information about locations and times
 	 */
-	private function setup_opening_hours( $check_date, $wanted_location ) {
+	private static function setup_opening_hours( $check_date, $wanted_location ) {
 
 		$locations = WP_Plugin_OpeningHours_Posttype_Location::locations( $wanted_location );
 		$opening_hours = array();
@@ -205,7 +221,7 @@ class WP_Plugin_OpeningHours_Widget {
 	 *
 	 * @return  array       the array with information about locations and times
 	 */
-	private function check_deviation_periods( $check_date, $location, $opening_hours ) {
+	private static function check_deviation_periods( $check_date, $location, $opening_hours ) {
 
 		$deviation_periods = get_field( 'avvikelse', $location->ID );
 		$day_number = date_i18n('w', strtotime( $check_date ) );
@@ -222,7 +238,7 @@ class WP_Plugin_OpeningHours_Widget {
 						// Is the date in given weekday of the period
 						if( in_array( $day_number, $deviation['veckodag'] ) ) {
 
-							if( $opening_hours[$location->ID]['type'] != 'single' ) {
+							if( ! isset( $opening_hours[$location->ID]['type'] ) || $opening_hours[$location->ID]['type'] != 'single' ) {
 
 								$opening_hours[$location->ID]['hours'] = $deviation['tider'];
 								$opening_hours[$location->ID]['type'] = 'period';
@@ -241,7 +257,7 @@ class WP_Plugin_OpeningHours_Widget {
 
 					} else { // No weekdays given. Check all days unless a single date has overriden
 
-						if( $opening_hours[$location->ID]['type'] != 'single' ) {
+						if( ! isset( $opening_hours[$location->ID]['type'] ) || $opening_hours[$location->ID]['type'] != 'single' ) {
 
 							$opening_hours[$location->ID]['hours'] = $deviation['tider'];
 							$opening_hours[$location->ID]['type'] = 'period';
@@ -279,7 +295,7 @@ class WP_Plugin_OpeningHours_Widget {
 	 *
 	 * @return  array       the array with information about locations and times
 	 */
-	private function check_deviation_dates( $check_date, $location, $opening_hours ) {
+	private static function check_deviation_dates( $check_date, $location, $opening_hours ) {
 
 		$deviation_dates = get_field( 'avvikande_datum', $location->ID );
 		if ( is_array( $deviation_dates ) && count( $deviation_dates ) > 0 ) {
@@ -322,7 +338,7 @@ class WP_Plugin_OpeningHours_Widget {
 	 *
 	 * @return bool
 	 */
-	private function between_dates( $check_date, $first_date, $second_date ) {
+	private static function between_dates( $check_date, $first_date, $second_date ) {
 
 		if (  $check_date <= $second_date && $check_date >= $first_date ) return true;
 		return false;
