@@ -137,9 +137,9 @@ class WP_Plugin_OpeningHours_Widget {
 			$compiled_hours = array();
 
 			foreach ( $location['hours'] as $hour ) {
-				$openinghours = explode( ':', $hour['oppningstid'] );
-				$closinghours = explode( ':', $hour['stangningstid'] );
-				$compiled_hours []= array_shift( $openinghours ) . '-' . array_shift( $closinghours );
+				$openinghours = $hour['oppningstid'];
+				$closinghours = $hour['stangningstid'];
+				$compiled_hours []= $openinghours . ' - ' . $closinghours;
 			}
 
 			?>
