@@ -46,7 +46,7 @@ class WP_Plugin_OpeningHours_Widget_Ajax {
 	private function ajax_load_opening_hours( $date, $location ) {
 
 		return array(
-			'date' => date_i18n('l j F', strtotime( $date ) ),
+			'date' => ucfirst( date_i18n('l j F', strtotime( $date ) ) ),
 			'hours' => WP_Plugin_OpeningHours_Widget::hours( $date, $location )
 		);
 

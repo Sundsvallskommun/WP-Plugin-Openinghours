@@ -10,6 +10,11 @@
     background: #286aa6;
     border: none;
     color: #fff;
+    padding: 0.75em 2.25em;
+}
+
+.opening-hours-wrapper .list-group-item .icon{
+    padding-top: 10px;
 }
 
 .card.opening-hours-wrapper .opening-hours-widget .location-information. span.phone,
@@ -22,18 +27,31 @@
     color: #fff;
 }
 
+
+
+.opening-hours-wrapper .location-information .closed{
+    text-transform: uppercase;
+}
+
+.opening-hours-wrapper .location-information p{
+    margin-bottom: 0;
+    margin-top: -5px;
+}
+
 .opening-hours-wrapper .header {
     display: block;
-    width: 90%;
+    width: 100%;
     text-align: center;
-    color: #fff;
+    color: #ffffff;
     margin-top: 10px;
 }
 
+
+
+
 .opening-hours-wrapper .opening-hours-header {
     background-color: #3c7cb6;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0.75rem 1.25rem;
 }
 
 .opening-hours-wrapper .opening-hours-header .arrow {
@@ -41,6 +59,7 @@
     color: #fff;
     margin-top: 10px;
 }
+
 
 .opening-hours-wrapper .header p {
     padding: 0;
@@ -50,15 +69,16 @@
 
 .opening-hours-wrapper .header .title {
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.8em;
+    letter-spacing: 1px;
 }
 
 .opening-hours-wrapper .header .date {
-    font-weight: bold;
     cursor: pointer;
-    width: 200px;
-    margin: auto;
+    margin-top: -5px;
+    font-size: 1.3em;
 }
+
 
 .opening-hours-wrapper .current-location,
 .opening-hours-wrapper .current-date {
@@ -81,14 +101,17 @@
 
 
 .opening-hours-wrapper .list-group-item .location-information {
-    width: 90%;
-    padding-left: 10px;
+
+    padding-left: 2.3em;
 }
 
 .opening-hours-wrapper .opening-hours-footer {
     background: #286aa6;
     border: none;
     color: #fff;
+    padding: 0.75em .5em 0.75em 2.5em;
+    font-size: 0.9em;
+
 }
 
 .opening-hours-wrapper .opening-hours-footer a,
@@ -110,6 +133,41 @@
     background-repeat: no-repeat;
     background-position: center;
     display: none;
+}
+
+
+.opening-hours-nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.opening-hours-nav ul li{
+    float:left;
+    color: #ffffff;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.opening-hours-nav .nav-title{
+    width: 80%;
+    text-align: center;
+}
+.opening-hours-nav .nav-left{
+    width: 10%;
+    cursor: pointer;
+}
+.opening-hours-nav .nav-right{
+    width: 10%;
+    text-align: right;
+    cursor: pointer;
+}
+
+.opening-hours-nav .nav-right .icon {
+    margin-left: auto;
 }
 
 

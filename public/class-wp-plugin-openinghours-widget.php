@@ -42,23 +42,32 @@ class WP_Plugin_OpeningHours_Widget {
 
 		ob_start();
 		?>
-		<div class="card opening-hours-wrapper">
-			<div class="card-block opening-hours-header">
-				<div class="arrow left-arrow float-xs-left"><?php material_icon( 'chevron left', array('size' => '2.5em') ); ?></div>
-				<div class="header float-xs-left">
-					<p class="title">Öppettider i Sundsvall</p>
-					<p class="date"><?php echo date_i18n('l j F', strtotime( $attributes['date'] ) ); ?></p>
-					<div class="current-date"><?php echo date_i18n('Y-m-d'); ?></div>
-					<div class="current-location"><?php echo $attributes['location'] ?></div>
-					<div class="datepicker-wrapper">
-						<input type="text" value="<? $attributes['date']?>" id="opening-hours-datepicker" />
-					</div>
+		<div class="opening-hours-wrapper">
+			<div class="opening-hours-header">
+				<div class="opening-hours-nav">
+					<ul>
+						<li class="nav-left left-arrow"><?php material_icon( 'chevron left', array('size' => '3em') ); ?></li>
+						<li class="nav-title">
+							<div class="header">
+								<p class="title">Öppettider i Sundsvall</p>
+								<p class="date"><?php echo ucfirst( date_i18n('l j F', strtotime( $attributes['date'] ) ) ); ?></p>
+								<div class="current-date"><?php echo date_i18n('Y-m-d'); ?></div>
+								<div class="current-location"><?php echo $attributes['location'] ?></div>
+								<div class="datepicker-wrapper">
+									<input type="text" value="<? $attributes['date']?>" id="opening-hours-datepicker" />
+								</div>
+							</div>
+
+						</li>
+						<li class="nav-right right-arrow"><?php material_icon( 'chevron right', array('size' => '3em') ); ?></li>
+					</ul>
 				</div>
-				<div class="arrow right-arrow float-xs-right"><?php material_icon( 'chevron right', array('size' => '2.5em') ); ?></div>
+				<div class="clearfix"></div>
+
 			</div>
 			<?php echo self::hours( $attributes['date'], $attributes['location'] ); ?>
-			<div class="card-block opening-hours-footer">
-				<a href="#" class="card-link">Visa alla öppettider i Sundsvall</a>
+			<div class="opening-hours-footer">
+				<a href="#" class="">Visa alla öppettider i Sundsvall</a>
 			</div>
 		</div>
 		<?php
@@ -97,11 +106,9 @@ class WP_Plugin_OpeningHours_Widget {
 
 					<div class="list-group-item">
 
-						<div class="icon float-xs-left"><?php material_icon( 'query builder' ); ?></div>
-						<div class="location-information float-xs-left">
-
+						<div class="icon pull-xs-left"><?php material_icon( 'query builder', array('size' => '2.3em') ); ?></div>
+						<div class="location-information pull-xs-left">
 							<?php echo self::location_information( $location ); ?>
-
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -135,18 +142,12 @@ class WP_Plugin_OpeningHours_Widget {
 				$compiled_hours []= array_shift( $openinghours ) . '-' . array_shift( $closinghours );
 			}
 
-			$phone = '';
-			if( ! empty( $location['location_data']->contact_phone ) ) {
-				$phone = sprintf( "<span class=\"phone\">Tel - %s</span>", $location['location_data']->contact_phone );
-			}
 			?>
-			<div>
-				<span class="hours"><?php echo implode( ', ', $compiled_hours ); ?></span>
-				<?php echo $phone ?>
-			</div>
+			<p class="opening hours"><?php echo implode( ', ', $compiled_hours ); ?></p>
+
 
 		<?php else : ?>
-			<div>STÄNGT</div>
+			<p class="opening closed"><?php _e('Stängt', 'msva' ); ?></p>
 		<?php endif; ?>
 
 		<?php
