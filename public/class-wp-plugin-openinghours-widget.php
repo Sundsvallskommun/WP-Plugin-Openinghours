@@ -50,7 +50,7 @@ class WP_Plugin_OpeningHours_Widget {
 						<li class="nav-title">
 							<div class="header">
 								<p class="title">Öppettider i Sundsvall</p>
-								<p class="date"><?php echo ucfirst( date_i18n('l j F', strtotime( $attributes['date'] ) ) ); ?></p>
+								<p class="date"><?php echo ucfirst( date_i18n('l j F', strtotime( $attributes['date'] ) ) ); ?><span class="icon"><i class="material-icons">date_range</i></span></p>
 								<div class="current-date"><?php echo date_i18n('Y-m-d'); ?></div>
 								<div class="current-location"><?php echo $attributes['location'] ?></div>
 								<div class="datepicker-wrapper">

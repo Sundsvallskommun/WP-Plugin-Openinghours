@@ -1,17 +1,24 @@
 .opening-hours-wrapper {
-    background: #286aa6;
+    background: #f7f7f7;
+    position: relative;
 }
 
 .opening-hours-wrapper .list-group {
-    background: #286aa6;
+    background: #f7f7f7;
+    padding-top: 1em;
 }
 
 .opening-hours-wrapper .list-group-item {
-    background: #286aa6;
+    background: #f7f7f7;
     border: none;
-    color: #fff;
-    padding: 0.75em 2.25em;
+    color: #3d3d3d;
+    padding: 0.25em 2.25em;
 }
+
+.opening-hours-wrapper .list-group-item p{
+    color: #3d3d3d;
+}
+
 
 .opening-hours-wrapper .list-group-item .icon{
     padding-top: 10px;
@@ -24,7 +31,7 @@
 
 .opening-hours-widget .list-group-item a,
 .opening-hours-widget .list-group-item a:visited {
-    color: #fff;
+    color: #3d3d3d;
 }
 
 
@@ -42,7 +49,7 @@
     display: block;
     width: 100%;
     text-align: center;
-    color: #ffffff;
+    color: #3d3d3d;
     margin-top: 10px;
 }
 
@@ -50,13 +57,13 @@
 
 
 .opening-hours-wrapper .opening-hours-header {
-    background-color: #3c7cb6;
+    background-color: #eeeeee;
     padding: 0.75rem 1.25rem;
 }
 
 .opening-hours-wrapper .opening-hours-header .arrow {
     cursor: pointer;
-    color: #fff;
+    color: #3d3d3d;
     margin-top: 10px;
 }
 
@@ -64,7 +71,7 @@
 .opening-hours-wrapper .header p {
     padding: 0;
     margin: 0;
-    color: #fff;
+    color: #3d3d3d;
 }
 
 .opening-hours-wrapper .header .title {
@@ -77,6 +84,15 @@
     cursor: pointer;
     margin-top: -5px;
     font-size: 1.3em;
+}
+
+.opening-hours-wrapper .header .date .icon {
+    padding-top: 15px;
+}
+
+.opening-hours-wrapper .header .date .material-icons {
+    font-size: 90%;
+    margin-left: 5px;
 }
 
 
@@ -102,13 +118,13 @@
 
 .opening-hours-wrapper .list-group-item .location-information {
 
-    padding-left: 2.3em;
+    padding-left: 2.5em;
 }
 
 .opening-hours-wrapper .opening-hours-footer {
-    background: #286aa6;
+    background: #f7f7f7;
     border: none;
-    color: #fff;
+    color: #3d3d3d;
     padding: 0.75em .5em 0.75em 2.5em;
     font-size: 0.9em;
 
@@ -116,7 +132,7 @@
 
 .opening-hours-wrapper .opening-hours-footer a,
 .opening-hours-wrapper .opening-hours-footer a:visited {
-    color: #fff;
+    color: #3d3d3d;
 }
 
 .opening-hours-wrapper .opening-hours-footer a:hover {
@@ -133,6 +149,7 @@
     background-repeat: no-repeat;
     background-position: center;
     display: none;
+    z-index: 999;
 }
 
 
@@ -147,7 +164,7 @@
 
 .opening-hours-nav ul li{
     float:left;
-    color: #ffffff;
+    color: #3d3d3d;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;

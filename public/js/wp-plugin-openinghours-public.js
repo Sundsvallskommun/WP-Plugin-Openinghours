@@ -67,7 +67,7 @@ function load_opening_hours( date ) {
 
 	}, function( response ) {
 
-		$('.opening-hours-header .header .date').empty().append(response.date);
+		$('.opening-hours-header .header .date').empty().append(response.date + '<span class="icon"><i class="material-icons">date_range</i></span>');
 		$('.loader').hide();
 		$('.opening-hours-widget').replaceWith( response.hours );
 
