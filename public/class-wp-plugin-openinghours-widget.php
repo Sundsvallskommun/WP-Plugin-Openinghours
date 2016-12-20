@@ -34,6 +34,7 @@ class WP_Plugin_OpeningHours_Widget {
 	public function opening_hours( $atts ) {
 
 		$attributes = shortcode_atts( array(
+			'title' => __('Öppettider', 'msva'),
 			'date' => date_i18n('Y-m-d'), // Default to today if no date is set
 			'location' => 'all'
 		), $atts );
@@ -49,12 +50,12 @@ class WP_Plugin_OpeningHours_Widget {
 						<li class="nav-left left-arrow"><?php material_icon( 'chevron left', array('size' => '3em') ); ?></li>
 						<li class="nav-title">
 							<div class="header">
-								<p class="title">Öppettider i Sundsvall</p>
+								<p class="title"><?php echo $attributes['title']; ?></p>
 								<p class="date"><?php echo ucfirst( date_i18n('l j F', strtotime( $attributes['date'] ) ) ); ?><span class="icon"><i class="material-icons">date_range</i></span></p>
 								<div class="current-date"><?php echo date_i18n('Y-m-d'); ?></div>
 								<div class="current-location"><?php echo $attributes['location'] ?></div>
 								<div class="datepicker-wrapper">
-									<input type="text" value="<? $attributes['date']?>" id="opening-hours-datepicker" />
+									<input type="text" value="<?php $attributes['date']?>" id="opening-hours-datepicker" />
 								</div>
 							</div>
 
