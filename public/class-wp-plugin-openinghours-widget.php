@@ -50,7 +50,7 @@ class WP_Plugin_OpeningHours_Widget {
 						<li class="nav-title">
 							<div class="header">
 								<p class="title">Öppettider i Sundsvall</p>
-								<p class="date"><?php echo ucfirst( date_i18n('l j F', strtotime( $attributes['date'] ) ) ); ?></p>
+								<p class="date"><?php echo ucfirst( date_i18n('l j F', strtotime( $attributes['date'] ) ) ); ?><span class="icon"><i class="material-icons">date_range</i></span></p>
 								<div class="current-date"><?php echo date_i18n('Y-m-d'); ?></div>
 								<div class="current-location"><?php echo $attributes['location'] ?></div>
 								<div class="datepicker-wrapper">
@@ -137,9 +137,9 @@ class WP_Plugin_OpeningHours_Widget {
 			$compiled_hours = array();
 
 			foreach ( $location['hours'] as $hour ) {
-				$openinghours = explode( ':', $hour['oppningstid'] );
-				$closinghours = explode( ':', $hour['stangningstid'] );
-				$compiled_hours []= array_shift( $openinghours ) . '-' . array_shift( $closinghours );
+				$openinghours = $hour['oppningstid'];
+				$closinghours = $hour['stangningstid'];
+				$compiled_hours []= $openinghours . ' - ' . $closinghours;
 			}
 
 			?>
