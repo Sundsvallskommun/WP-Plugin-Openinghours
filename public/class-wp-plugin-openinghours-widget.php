@@ -36,7 +36,8 @@ class WP_Plugin_OpeningHours_Widget {
 		$attributes = shortcode_atts( array(
 			'title' => __('Öppettider', 'msva'),
 			'date' => date_i18n('Y-m-d'), // Default to today if no date is set
-			'location' => 'all'
+			'location' => 'all',
+			'link'  => false
 		), $atts );
 
 		$this->enqueue_scripts_and_styles();
@@ -68,7 +69,9 @@ class WP_Plugin_OpeningHours_Widget {
 			</div>
 			<?php echo self::hours( $attributes['date'], $attributes['location'] ); ?>
 			<div class="opening-hours-footer">
-				<a href="#" class="">Visa alla öppettider i Sundsvall</a>
+				<?php if( !empty( $attributes['link'] ) ) : ?>
+				<a href="<?php echo $attributes['link']; ?>"><?php _e( 'Visa alla öppettider', 'msva' );?></a>
+				<?php endif; ?>
 			</div>
 		</div>
 		<?php
