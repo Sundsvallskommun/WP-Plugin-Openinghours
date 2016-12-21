@@ -199,7 +199,7 @@ class WP_Plugin_OpeningHours_Widget {
 				$opening_hours = self::check_deviation_periods( $check_date, $location, $opening_hours );
 				$opening_hours = self::check_deviation_dates( $check_date, $location, $opening_hours );
 
-				if ( empty( $opening_hours[ $location->ID ]['type'] )|| $opening_hours[$location->ID]['closed'] == true ) {
+				if ( empty( $opening_hours[ $location->ID ]['type'] ) || ( isset( $opening_hours[$location->ID]['closed'] ) && $opening_hours[$location->ID]['closed'] == true ) ) {
 					$opening_hours[ $location->ID ]['hours'] = 'STÄNGT';
 				}
 
