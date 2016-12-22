@@ -20,27 +20,32 @@
 				date.setDate( date.getDate() );
 				date = getFormattedDate( date );
 
-				load_opening_hours( date );
+				var location = $(this).closest('.opening-hours-wrapper').find('.current-location').html();
+				load_opening_hours( this, location, date );
+
 
 			});
 
 			$('.right-arrow').on('click', function() {
 
-				var date = new Date( $('.current-date').html() );
+				var date = new Date( $(this).closest('.opening-hours-wrapper').find('.current-date').html() );
 				date.setDate( date.getDate() + 1 );
 				date = getFormattedDate( date );
 
-				load_opening_hours( date );
+				var location = $(this).closest('.opening-hours-wrapper').find('.current-location').html();
+				load_opening_hours( this, location, date );
+
 
 			});
 
 			$('.left-arrow').on('click', function() {
 
-				var date = new Date( $('.current-date').html() );
+				var date = new Date( $(this).closest('.opening-hours-wrapper').find('.current-date').html() );
 				date.setDate( date.getDate() - 1 );
 				date = getFormattedDate( date );
 
-				load_opening_hours( date );
+				var location = $(this).closest('.opening-hours-wrapper').find('.current-location').html();
+				load_opening_hours( this, location, date );
 
 			});
 
@@ -51,12 +56,15 @@
 
 
 
-function load_opening_hours( date ) {
-	var location = $('.current-location').html();
+function load_opening_hours( elm, location, date ) {
+	//var location = $( current ).find(' .current-location').html();
+	console.log( elm );
 
-	$('.current-date').html( date );
-	$('.loader').show();
-	$('.opening-hours-widget .list-group-item').fadeTo('medium', 0.2);
+	var wrapper = $(elm).closest('.opening-hours-wrapper');
+
+	wrapper.find('.current-date').html( date );
+	wrapper.closest('.opening-hours-wrapper').find('.loader').show();
+	wrapper.closest('.opening-hours-wrapper').find('.opening-hours-widget .list-group-item').fadeTo('medium', 0.2);
 
 	$.post( WP_PLUGIN_OPENINGHOURS.ajax_url, {
 
@@ -67,9 +75,9 @@ function load_opening_hours( date ) {
 
 	}, function( response ) {
 
-		$('.opening-hours-header .header .date').empty().append(response.date + '<span class="icon"><i class="material-icons">date_range</i></span>');
-		$('.loader').hide();
-		$('.opening-hours-widget').replaceWith( response.hours );
+		wrapper.closest('.opening-hours-wrapper').find('.opening-hours-header .header .date').empty().append(response.date + '<span class="icon"><i class="material-icons">date_range</i></span>');
+		wrapper.closest('.opening-hours-wrapper').find('.loader').hide();
+		wrapper.closest('.opening-hours-wrapper').find('.opening-hours-widget').replaceWith( response.hours );
 
 	});
 }
