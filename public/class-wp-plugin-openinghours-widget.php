@@ -147,7 +147,7 @@ class WP_Plugin_OpeningHours_Widget {
 			}
 
 			?>
-			<p class="opening hours"><?php echo implode( ', ', $compiled_hours ); ?></p>
+			<p class="opening hours"><?php echo str_replace( ':', '.', implode( ', ', $compiled_hours ) ); ?></p>
 
 
 		<?php else : ?>
