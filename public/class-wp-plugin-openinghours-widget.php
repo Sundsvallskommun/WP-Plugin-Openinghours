@@ -151,7 +151,11 @@ class WP_Plugin_OpeningHours_Widget {
 
 
 		<?php else : ?>
-			<p class="opening closed"><?php _e('Stängt', 'msva' ); ?></p>
+			<?php if ( $location['hours'] !== 'STÄNGT' ) : ?>
+				<p class="opening"><?php echo $location['hours']; ?></p>
+			<?php else : ?>
+				<p class="opening closed"><?php _e( 'Stängt', 'msva' ); ?></p>
+			<?php endif; ?>
 		<?php endif; ?>
 
 		<?php
@@ -181,6 +185,8 @@ class WP_Plugin_OpeningHours_Widget {
 
 				$phone = get_field( 'telefon', $location->ID );
 				$email = get_field( 'e-post', $location->ID );
+				$override_hours = get_field( 'override_hours', $location->ID );
+
 
 				$field_name = 'standard_' . date_i18n( 'w', strtotime( $check_date ) );
 				$standard_opening_hours = get_field( $field_name, $location->ID );
@@ -201,6 +207,11 @@ class WP_Plugin_OpeningHours_Widget {
 
 				if ( empty( $opening_hours[ $location->ID ]['type'] ) || ( isset( $opening_hours[$location->ID]['closed'] ) && $opening_hours[$location->ID]['closed'] == true ) ) {
 					$opening_hours[ $location->ID ]['hours'] = 'STÄNGT';
+				}
+
+				// override all hours
+				if( !empty( $override_hours ) ) {
+					$opening_hours[ $location->ID ]['hours'] = $override_hours;
 				}
 
 

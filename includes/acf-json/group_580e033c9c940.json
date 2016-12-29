@@ -3,6 +3,25 @@
     "title": "\u00d6ppnings och st\u00e4ngningstider f\u00f6r anl\u00e4ggningar",
     "fields": [
         {
+            "key": "field_58650ffbe9668",
+            "label": "Fritext",
+            "name": "override_hours",
+            "type": "text",
+            "instructions": "Om fritextf\u00e4ltet anv\u00e4nds s\u00e5 skriver den \u00f6ver alla eventuella klockslag som finns angivna. \u00c4ven f\u00f6r avvikande perioder.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_580ef8ee1a59f",
             "label": "M\u00e5ndag",
             "name": "standard_1",
@@ -392,5 +411,5 @@
     "active": 1,
     "description": "Ange de vanliga \u00f6ppettiderna som visas om inget annat anges",
     "menu_item_level": "all",
-    "modified": 1477571574
+    "modified": 1483018909
 }
