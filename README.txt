@@ -3,7 +3,7 @@ Contributors: farne
 Tags: hours, opening, closing, location
 Requires at least: 4.6
 Tested up to: 4.6
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,10 @@ post id or "all" which lists all locations. The date parameter sets the startdat
 == Screenshots ==
 
 == Changelog ==
+
+= 1.0.2 =
+* Fixed a css syntax error.
+* Fixed an error when to verify a sunday as current day.
 
 = 1.0 =
 * First version
