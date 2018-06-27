@@ -242,6 +242,11 @@ class WP_Plugin_OpeningHours_Widget {
 		$deviation_periods = get_field( 'avvikelse', $location->ID );
 		$day_number = date_i18n('w', strtotime( $check_date ) );
 
+		// bug fix: sunday is zero but we saving it as seven with acf. So this fix change from 0 to 7.
+		if ( $day_number === '0' ) {
+			$day_number = '7';
+		}
+
 		if ( is_array( $deviation_periods ) && count( $deviation_periods ) > 0 ) {
 
 			foreach ( $deviation_periods as $deviation ) {
