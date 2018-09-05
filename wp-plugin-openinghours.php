@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              http://cybercom.com
- * @since             1.0.0
+ * @since             1.0.2
  * @package           Wp_Plugin_Openinghours
  *
  * @wordpress-plugin
